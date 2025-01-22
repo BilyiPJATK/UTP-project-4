@@ -1,0 +1,26 @@
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.1">
+    <persistence-unit name="LibraryPersistenceUnit" transaction-type="RESOURCE_LOCAL">
+        <class>entity.BooksEntity</class>
+        <class>entity.BorrowingsEntity</class>
+        <class>entity.CopiesEntity</class>
+        <class>entity.LibrariansEntity</class>
+        <class>entity.PublishersEntity</class>
+        <class>entity.UsersEntity</class>
+
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver" />
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:h2:~/database" />
+
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.connection.url" value="jdbc:h2:C:/Users/1/IdeaProjects/UTP-project-4/db/database"/>
+            <property name="hibernate.connection.driver_class" value="org.h2.Driver"/>
+
+
+        </properties>
+
+    </persistence-unit>
+</persistence>
