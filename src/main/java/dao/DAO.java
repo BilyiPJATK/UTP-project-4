@@ -2,15 +2,46 @@ package dao;
 
 import java.util.List;
 
+/**
+ * Generic DAO interface for performing CRUD operations on entities.
+ *
+ * @param <T> the type of the entity
+ */
 public interface DAO<T> {
 
-    void create(T entity);  // Create an entity
+    /**
+     * Creates a new entity in the database.
+     *
+     * @param entity the entity to be created
+     */
+    void create(T entity);
 
-    T getById(int id);      // Get an entity by ID
+    /**
+     * Retrieves an entity by its ID.
+     *
+     * @param id the ID of the entity
+     * @return the entity with the specified ID, or null if not found
+     */
+    T getById(int id);
 
-    List<T> getAll();       // Get all entities of type T
+    /**
+     * Retrieves all entities of type T.
+     *
+     * @return a list of all entities of type T
+     */
+    List<T> getAll();
 
-    void update(T entity);  // Update an entity
+    /**
+     * Updates an existing entity in the database.
+     *
+     * @param entity the entity to be updated
+     */
+    void update(T entity);
 
-    void delete(int id);    // Delete an entity by ID
+    /**
+     * Deletes an entity by its ID.
+     *
+     * @param id the ID of the entity to be deleted
+     */
+    void delete(int id);
 }

@@ -351,7 +351,7 @@ public class LibrarySystem {
     public static TableModel buildBorrowingsTableModel() {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         BorrowingDAO borrowingDAO = new BorrowingDAO(entityManager);
-        Object[] columns = {"id", "copy id", "author id", "publisher", "publication year", "isbn"};
+        Object[] columns = {"id", "copy id", "author id", "publisher", "publication year"};
         List<List<Object>> lists = new ArrayList<>();
         for(BorrowingsEntity borrowing : borrowingDAO.getAll())
             lists.add(borrowing.returnAll());
@@ -428,7 +428,7 @@ public class LibrarySystem {
                     JOptionPane.showMessageDialog(registerFrame, "add successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
                     registerFrame.dispose();
 
-                    createMainWindowUser();
+
 
 
                 } finally {
@@ -495,7 +495,7 @@ public class LibrarySystem {
                 JOptionPane.showMessageDialog(registerFrame, "add successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
                 registerFrame.dispose();
 
-                createMainWindowUser();
+
 
 
             } finally {
@@ -579,7 +579,7 @@ public class LibrarySystem {
                 JOptionPane.showMessageDialog(registerFrame, "add successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
                 registerFrame.dispose();
 
-                createMainWindowUser();
+
 
 
             } finally {
@@ -648,8 +648,8 @@ public class LibrarySystem {
                     // Close the delete frame
                     deleteFrame.dispose();
 
-                    // Refresh the main window
-                    createMainWindowAdmin();
+
+
 
                 } catch (Exception ex) {
                     // Rollback in case of an error
@@ -734,8 +734,8 @@ public class LibrarySystem {
                 // Close the delete frame
                 deleteFrame.dispose();
 
-                // Refresh the main window
-                createMainWindowAdmin();
+
+
 
             } catch (Exception ex) {
                 // Rollback in case of an error
@@ -816,8 +816,8 @@ public class LibrarySystem {
                 // Close the delete frame
                 deleteFrame.dispose();
 
-                // Refresh the main window
-                createMainWindowAdmin();
+
+
 
             } catch (Exception ex) {
                 // Rollback in case of an error
