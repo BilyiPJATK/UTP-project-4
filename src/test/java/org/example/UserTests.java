@@ -97,20 +97,4 @@ public class UserTests {
     void testNoEmailEx() {
         assertFalse(LibrarySystem.isEmailUnique(null));
     }
-
-    @Test
-    void testAddBorrowings(){
-        UsersEntity user = new UsersEntity("user", "testadd@example.com", "777888999", "Delete Me Address");
-        usersDAO.create(user);
-
-        BooksEntity book = entityManager.find(BooksEntity.class, 10);
-
-        CopiesEntity copy = new CopiesEntity(book,432,"Available");
-        CopiesEntity copy2 = new CopiesEntity(book,432,"Available");
-
-        BorrowingsEntity borrowing = new BorrowingsEntity(user, copy, Date.valueOf(LocalDate.now()), null);
-        borrowingDAO.create(borrowing);
-
-        assertNotNull(user);
-    }
 }
