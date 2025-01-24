@@ -42,26 +42,26 @@ public class Populate {
 
             // Create Publisher entities
             PublisherDAO publisherDAO = new PublisherDAO(entityManager);
-            PublishersEntity publisher1 = new PublishersEntity("wrwe Books", "123 Penerwguin St.", "555-1322423234");
+            PublishersEntity publisher1 = new PublishersEntity("named Books", "123 Penerwguin St.", "555-00823234");
             publisherDAO.create(publisher1);
 
-            PublishersEntity publisher2 = new PublishersEntity("nameee", "456 weww Rd.", "555-324325678");
+            PublishersEntity publisher2 = new PublishersEntity("namePub", "456 huuh Rd.", "555-3332678");
             publisherDAO.create(publisher2);
 
             // Create Book entities
             BookDAO bookDAO = new BookDAO(entityManager);
-            BooksEntity book1 = new BooksEntity("The Gatsby", "F. esfs Fitzgerald", publisher1, "1444", "978-02234222743273565");
+            BooksEntity book1 = new BooksEntity("The Gatsby", "F. esfs Fitzgerald", publisher1, "1944", "978-02238885");
             bookDAO.create(book1);
 
-            BooksEntity book2 = new BooksEntity("191284", "Orwell", publisher2, "1439", "978-34322222242");
+            BooksEntity book2 = new BooksEntity("Titled", "Orwell", publisher2, "1939", "978-00349228");
             bookDAO.create(book2);
 
             // Create User entities
             UserDAO userDAO = new UserDAO(entityManager);
-            UsersEntity user1 = new UsersEntity("Mat Doe", "mat1@gmail.com", "555-1234", "123 Main St.");
+            UsersEntity user1 = new UsersEntity("John Doe", "johndoee@gmail.com", "555-1234", "123 Main St.");
             userDAO.create(user1);
 
-            UsersEntity user2 = new UsersEntity("Kale Smith", "kale1@yahoo.com", "555-5678", "456 Elm St.");
+            UsersEntity user2 = new UsersEntity("Kale Smith", "kale13@yahoo.com", "555-5678", "456 Elm St.");
             userDAO.create(user2);
 
             // Create Copies of books
