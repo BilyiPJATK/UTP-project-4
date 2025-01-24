@@ -1,11 +1,17 @@
 package org.example;
 
 import dao.UserDAO;
+import entity.BooksEntity;
+import entity.BorrowingsEntity;
+import entity.CopiesEntity;
 import entity.UsersEntity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import org.junit.jupiter.api.*;
+
+import java.sql.Date;
+import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -90,5 +96,21 @@ public class UserTests {
     @Test
     void testNoEmailEx() {
         assertFalse(LibrarySystem.isEmailUnique(null));
+    }
+
+    @Test
+    void testAddBorrowings(){
+        UsersEntity user = new UsersEntity("user", "testadd@example.com", "777888999", "Delete Me Address");
+        usersDAO.create(user);
+
+        BooksEntity book = entityManager.find(BooksEntity.class, 10);
+
+        CopiesEntity copy = new CopiesEntity(book,432,"Available");
+        CopiesEntity copy2 = new CopiesEntity(book,432,"Available");
+
+        BorrowingsEntity borrowing = new BorrowingsEntity(user, copy, Date.valueOf(LocalDate.now()), null);
+        borrowingDAO.create(borrowing);
+
+        assertNotNull(user);
     }
 }
