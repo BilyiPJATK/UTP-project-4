@@ -107,7 +107,7 @@ public class CopiesEntity {
      *
      * @return the status of the copy
      */
-    public Object getStatus() {
+    public String getStatus() {
         return status;
     }
 
